@@ -1,0 +1,56 @@
+<html><head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Visualizing Whitman</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+  div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 60px;          
+    height: 28px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: lightsteelblue; 
+    border: 0px;    
+    border-radius: 8px;     
+    pointer-events: none;     
+}
+
+h1, div{
+  font-family: 'Great Vibes', cursive;
+}
+
+body {
+  text-align: center;
+}
+
+
+
+</style>
+</head>
+  <body>
+  <h1>First Presidential Debate</h1>
+  <h2>Clinton Vs. Trump</h2>
+  <button onclick="loadTrump()">Trump</button>
+  <button onclick="loadClinton()">Clinton</button>
+  <button onclick="loadAll()">All</button>
+
+
+
+    <div class="wordfreq"></div>
+
+
+
+    <script type="text/javascript" src="script.js">
+
+
+    </script>
+    <div class="tooltip" style="opacity: 0; left: 413px; top: 296px;">,<br>17936</div>
+ </body></html>
