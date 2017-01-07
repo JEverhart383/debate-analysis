@@ -1,19 +1,19 @@
 import nltk, io, sys, json
 from nltk import word_tokenize, wordpunct_tokenize
-from nltk.corpus import stopwords
 from normalize import *
 from freqdist import *
 from generatejson import *
+from customstopwords import *
 
 
-input_file = sys.argv[1]
+speaker_directory = sys.argv[1]
 
 
-generate_json_results(input_file)
+generate_json_results(speaker_directory)
 
 
 # Initialize Results JSON
-results = {	'speaker': 'clinton' if True else 'trump', 
+results = {	'speaker': speaker_directory, 
 			'fifty_most_common': ' ', 
 			'frequency_distribution': '', 
 			'total_words' : '',
@@ -25,9 +25,9 @@ file = io.open('./clinton/clinton-debate2.txt', 'r', encoding='utf8')
 raw = file.read()
 
 # Set Stopwords here and add own
-default_stopwords = set(stopwords.words('english'))
-custom_stopwords = set((u'...', ))
-all_stopwords = default_stopwords | custom_stopwords
+# remove_custom_stopwords module expects a UTF8 list 
+
+all_stopwords = remove_custom_stopwords((u'the', u'solo'))
 
 
 # Tokenize raw input 
