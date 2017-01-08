@@ -11,7 +11,8 @@ def generate_freqdist_from_normalized_text(normalized_text, speaker):
 	for word,freq in freq_dist.iteritems():
 		new_word = {'word': word, 
 					'frequency': freq, 
-					'speaker': speaker
+					'speaker': speaker, 
+					'length': len(word)
 					}
 		new_list.append(new_word)
 
@@ -21,7 +22,8 @@ def generate_freqdist_from_normalized_text(normalized_text, speaker):
 	for word, freq in freq_dist.most_common(50):
 		new_word = {'word': word, 
 					'frequency': freq, 
-					'speaker': speaker
+					'speaker': speaker, 
+					'length': len(word)
 					}
 		new_list_common_fifty.append(new_word)
 
