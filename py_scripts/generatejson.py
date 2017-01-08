@@ -31,7 +31,7 @@ def generate_json_results(directory_path):
 		# Set Stopwords here and add own
 		# remove_custom_stopwords module expects a UTF8 list 
 
-		all_stopwords = remove_custom_stopwords((u'the', u'solo'))
+		all_stopwords = remove_custom_stopwords((u'the', u'solo', u'...', u'clinton', u'trump'))
 
 
 		# Tokenize raw input 
