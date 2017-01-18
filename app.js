@@ -13,7 +13,7 @@ var tooltip = d3.select("body")
     .attr("id", "tooltip");
 
 
-d3.json('./clinton/clinton-debate1-result.json', function(data){
+d3.json('./trump/trump-debate1-result.json', function(data){
 
 	console.log(data["fifty_most_common"]); 
 	var xScale = d3.scale.linear().range([0, width]); 
@@ -55,7 +55,8 @@ d3.json('./clinton/clinton-debate1-result.json', function(data){
     	]);	 
 
     cScale.domain([
-    	d3.min(data["fifty_most_common"].map(function(d){return +d["length"];})),
+    	0,
+    	// d3.min(data["fifty_most_common"].map(function(d){return +d["length"];})),
     	d3.max(data["fifty_most_common"].map(function(d){return +d["length"];}))
     	]);	
 
@@ -93,7 +94,7 @@ d3.json('./clinton/clinton-debate1-result.json', function(data){
     
 		    //create variable reference to dot we hovered over
 		    var dot = d3.select(this)
-		        .style("opacity", 1);
+		        .style("opacity", .5);
 		    console.log(dot);
 		    //set the tool tip text, and make it visible with display "block" CSS.
 		    var tooltip = d3.select("#tooltip")
@@ -115,7 +116,7 @@ d3.json('./clinton/clinton-debate1-result.json', function(data){
 		.on("mouseout", function(e){
 
 		    d3.select(this)
-		        .style("opacity", .5);
+		        .style("opacity", 1);
 
 		    d3.select("#tooltip")
 		        .style({"display":"none"})
