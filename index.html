@@ -6,7 +6,7 @@
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
   <!-- Latest compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <style type="text/css">
@@ -53,19 +53,46 @@
     border-width: 9px;
     margin-left:-9px;
 }
+
+
+.clinton-bg, 
+.trump-bg {
+  position: relative;
+  min-height: 600px;
+}
+
+
+.clinton-img, 
+.trump-img {
+  position: absolute;
+  height: 600px; 
+  max-width: 550px;
+  opacity: .15; 
+  z-index: -100;
+}
+
+
 </style>
 
 </head>
   <body>
-  <h1>Linguistic Analysis of 2016 Presidential Debates</h1>
-  <h2>Hillary R. Clinton Vs. Donald J. Trump</h2>
   <div class="container-fluid">
+  <h1>Linguistic Analysis of 2016 Presidential Debates</h1>
     
-    <div class="col-lg-6">
-      <div id="clinton-results"></div>
+    <div class="col-lg-6 clinton-bg">
+    <img class="img img-responsive clinton-img" src="./images/clinton.png">
+    <h2>Hillary R. Clinton</h2>
+    <div id="clinton-total">45145 total words spoken</div>
+      <div id="clinton-results">
+        
+      </div>
     </div>
-    <div class="col-lg-6">
-      <div id="trump-results"></div>
+    <div class="col-lg-6 trump-bg">
+    <img class="img img-responsive trump-img" src="./images/trump.png">
+        <h2>Donald J. Trump</h2>
+      <div id="trump-results">
+        
+      </div>
     </div>
 
   </div>
