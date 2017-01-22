@@ -1,22 +1,24 @@
 
-function createCommonFiftyChart(chartDiv, path){
+function createCommonFiftyChart(chartDiv, totalsDiv, path){
 
     var margin = {top:20, right:10, bottom:20, left:30},
     width  = 500 - margin.right - margin.left,
     height = 250 - margin.top - margin.bottom;
-  
 
     var chart = d3.select(chartDiv)
     .append('svg')
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom); 
 
-    var tooltip = d3.select("body")
+    // var tooltip = d3.select("body")
+    d3.select(chartDiv)
     .append("div")
     .attr("id", "tooltip" + chartDiv.split('#')[1]);
 
     d3.json(path, function(data){
         console.log(data)
+
+    d3.select( totalsDiv + ' .total-tokens').text(data['total_words'])    
 
     var xScale = d3.scale.linear().range([0, width]); 
     var yScale = d3.scale.linear().range([height,0]); 
@@ -135,6 +137,6 @@ function createCommonFiftyChart(chartDiv, path){
 
 
 //init chart
-createCommonFiftyChart('#clinton-results', './clinton/clinton-debate1-result.json' )
-createCommonFiftyChart('#trump-results', './trump/trump-debate1-result.json')
+createCommonFiftyChart('#clinton-results', '#clinton-total',  './clinton/clinton-debate1-result.json' )
+createCommonFiftyChart('#trump-results', '#trump-total', './trump/trump-debate1-result.json')
 
