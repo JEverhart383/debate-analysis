@@ -55,21 +55,8 @@
 }
 
 
-.clinton-bg, 
-.trump-bg {
-  position: relative;
-  min-height: 600px;
-}
 
 
-.clinton-img, 
-.trump-img {
-  position: absolute;
-  height: 600px; 
-  max-width: 550px;
-  opacity: .15; 
-  z-index: -100;
-}
 
 
 </style>
@@ -78,21 +65,25 @@
   <body>
   <div class="container-fluid">
   <h1>Linguistic Analysis of 2016 Presidential Debates</h1>
-    
-    <div class="col-lg-6 clinton-bg">
-    <img class="img img-responsive clinton-img" src="./images/clinton.png">
-    <h2>Hillary R. Clinton</h2>
-    <div id="clinton-total">45145 total words spoken</div>
-      <div id="clinton-results">
-        
+    <div class="row">
+      <div class="col-lg-6">
+      <img class="img img-responsive clinton-img" src="./images/clinton.png">
+          
+        </div>
+      <div class="col-lg-6">
+            <h2>Hillary R. Clinton</h2>
+      <div id="clinton-total">45145 total words spoken</div>
+      <div id="clinton-results"></div>
       </div>
     </div>
-    <div class="col-lg-6 trump-bg">
-    <img class="img img-responsive trump-img" src="./images/trump.png">
+    <div class="row">
+      <div class="col-lg-6">
         <h2>Donald J. Trump</h2>
-      <div id="trump-results">
-        
+        <div id="trump-results">
       </div>
+      </div>
+      <div class="col-lg-6">
+        <img class="img img-responsive trump-img" src="./images/trump.png">
     </div>
 
   </div>

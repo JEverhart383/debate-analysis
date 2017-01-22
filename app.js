@@ -16,6 +16,7 @@ function createCommonFiftyChart(chartDiv, path){
     .attr("id", "tooltip" + chartDiv.split('#')[1]);
 
     d3.json(path, function(data){
+        console.log(data)
 
     var xScale = d3.scale.linear().range([0, width]); 
     var yScale = d3.scale.linear().range([height,0]); 
