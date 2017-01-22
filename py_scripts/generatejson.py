@@ -24,7 +24,9 @@ def generate_json_results(directory_path):
 					'fifty_most_common': ' ', 
 					'frequency_distribution': '', 
 					'total_words' : '',
-					'total_words_normalized' : ''
+					'set_total_words': '', 
+					'total_words_normalized' : '', 
+					'set_total_words_normalized' : ''
 					}
 
 
@@ -37,6 +39,7 @@ def generate_json_results(directory_path):
 		# Tokenize raw input 
 		tokens = wordpunct_tokenize(file_raw)
 		results['total_words'] = len(tokens)
+		results['set_total_words'] = len(sorted(set(tokens)))
 
 
 		# Normalization
@@ -46,6 +49,7 @@ def generate_json_results(directory_path):
 		normalized_text = normalize_text_from_tokens(tokens, all_stopwords)
 
 		results['total_words_normalized'] = len(normalized_text)
+		results['set_total_words_normalized'] = len(sorted(set(normalized_text)))
 
 		# Generate Freqeuency Distribution and 50 Most Common 
 		# Imports generate_freqdist_from_normalized_text from freqdist
