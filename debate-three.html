@@ -1,0 +1,106 @@
+<html><head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NLP Project | JCE</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<style type="text/css">
+  #tooltip{
+    font:0.7em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    opacity: 0;
+    position: fixed;
+    top:0;
+    left:0;
+    -webkit-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+    z-index: 9999;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 0px #ccc;
+    padding: 10px;
+    background-color:white;
+    pointer-events:none;
+}
+/* Build the arrow at bottom of tooltip box */
+#tooltip:after{
+    top:100%;
+    left:50%;
+    border:solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-top-color:black;
+    pointer-events:none;
+    border-width: 10px;
+    margin-left:-10px;
+}
+#tooltip:before{
+    top:100%;
+    left:50%;
+    border:solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: 99999;
+    border-top-color:white;
+    pointer-events:none;
+    border-width: 9px;
+    margin-left:-9px;
+}
+
+
+
+
+
+
+</style>
+
+</head>
+  <body>
+  <div class="container-fluid">
+  <h1>Linguistic Analysis of 2016 Presidential Debates</h1>
+    <div class="row">
+      <div class="col-lg-6">
+      <img class="img img-responsive clinton-img" src="./images/clinton.png">
+          
+        </div>
+      <div class="col-lg-6">
+            <h2>Hillary R. Clinton</h2>
+      <div id="clinton-total">
+      <span class="total-tokens"></span>
+      <span class="total-unique-tokens"></span>
+      <span class="total-tokens-normal"></span>
+      <span class="total-tokens-unique-normal"></span>
+      </div>
+      <div id="clinton-results"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Donald J. Trump</h2>
+        <div id="trump-results">
+      </div>
+      </div>
+      <div class="col-lg-6">
+        <img class="img img-responsive trump-img" src="./images/trump.png">
+    </div>
+
+  </div>
+
+
+    <div class="wordfreq"></div>
+
+
+     <a href="debate-two.html">Previous Debate ></a>
+    <script type="text/javascript" src="debate-three.js">
+
+
+    </script>
+    <div class="tooltip" style="opacity: 0; left: 413px; top: 296px;">,<br>17936</div>
+ </body></html>

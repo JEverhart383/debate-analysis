@@ -38,6 +38,8 @@ def generate_json_results(directory_path):
 
 		# Tokenize raw input 
 		tokens = wordpunct_tokenize(file_raw)
+		text = nltk.Text(tokens)
+		print( text.concordance("the") ) 
 		results['total_words'] = len(tokens)
 		results['set_total_words'] = len(sorted(set(tokens)))
 

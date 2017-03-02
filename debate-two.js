@@ -1,9 +1,9 @@
 
-function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
+function createCommonFiftyChart(chartDiv, totalsDiv, path){
 
     var margin = {top:20, right:10, bottom:20, left:30},
-    width  = 600 - margin.right - margin.left,
-    height = 300 - margin.top - margin.bottom;
+    width  = 500 - margin.right - margin.left,
+    height = 250 - margin.top - margin.bottom;
 
     var chart = d3.select(chartDiv)
     .append('svg')
@@ -137,6 +137,6 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
 
 
 //init chart
-createCommonFiftyChart('#clinton-results', '#clinton-total',  './clinton/clinton-debate1-result.json' )
-createCommonFiftyChart('#trump-results', '#trump-total', './trump/trump-debate1-result.json')
+createCommonFiftyChart('#clinton-results', '#clinton-total',  './clinton/clinton-debate2-result.json' )
+createCommonFiftyChart('#trump-results', '#trump-total', './trump/trump-debate2-result.json')
 
