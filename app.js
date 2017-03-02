@@ -18,7 +18,10 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
     d3.json(path, function(data){
         console.log(data)
 
-    d3.select( totalsDiv + ' .total-tokens').text(data['total_words'])    
+    d3.select( totalsDiv + ' .total-tokens').text(data['total_words'])  
+    d3.select( totalsDiv + ' .total-unique-tokens').text(data['set_total_words']) 
+    d3.select( totalsDiv + ' .total-tokens-normal').text(data['total_words_normalized']) 
+    d3.select( totalsDiv + ' .total-tokens-unique-normal').text(data['set_total_words_normalized'])    
 
     var xScale = d3.scale.linear().range([0, width]); 
     var yScale = d3.scale.linear().range([height,0]); 
