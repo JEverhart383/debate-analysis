@@ -13,7 +13,8 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
     // var tooltip = d3.select("body")
     d3.select(chartDiv)
     .append("div")
-    .attr("id", "tooltip" + chartDiv.split('#')[1]);
+    .attr("id", "tooltip" + chartDiv.split('#')[1])
+    .attr('class', 'tooltip');
 
     d3.json(path, function(data){
         console.log(data)
@@ -114,9 +115,10 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
             var tooltipHeight = tooltip.node().getBoundingClientRect().height;
 
             //set the CSS of our tool tip to position it based on dot attributes
+            //Add 5px to the hover state 
             tooltip.style({
                 "left" : (+dot.attr("cx") + (+dot.attr("r")) + margin.left) + "px",
-                "top"  : (+dot.attr("cy") + margin.top - tooltipHeight - (+dot.attr("r"))) + "px"
+                "top"  : (+dot.attr("cy") + margin.top - tooltipHeight - (+dot.attr("r")) + 20) + "px"
             });
         })
         .on("mouseout", function(e){
