@@ -32,11 +32,13 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
 
     let xAxis = d3.svg.axis()
             .scale(xScale)
-            .orient('bottom'); 
+            .orient('bottom')
+            .tickSize(2, 2); 
 
     let yAxis = d3.svg.axis()
             .scale(yScale)
-            .orient('left');
+            .orient('left')
+            .tickSize(2, 2);
 
     let xGrid = d3.svg.axis()
     .scale(xScale)
