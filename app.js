@@ -27,7 +27,7 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
     var xScale = d3.scale.linear().range([0, width]); 
     var yScale = d3.scale.linear().range([height,0]); 
     var bScale = d3.scale.linear().range([5,10]); 
-    var cScale = d3.scale.linear().range(['blue', 'red']); 
+    var cScale = d3.scale.linear().range(['#2c7fb8', '#edf8b1']); 
 
 
     let xAxis = d3.svg.axis()
@@ -48,13 +48,11 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
 
     xScale.domain([
         0,
-        // d3.min(data["fifty_most_common"].map(function(d){return +d["length"];})),
         d3.max(data["fifty_most_common"].map(function(d){return +d["length"];}))
 
         ]); 
 
      yScale.domain([
-        // d3.min(data["fifty_most_common"].map(function(d){return +d["frequency"];})),
         0,
         d3.max(data["fifty_most_common"].map(function(d){return +d["frequency"];}))
         ]);
@@ -65,9 +63,9 @@ function createCommonFiftyChart(chartDiv, totalsDiv, path, colorScaleArray){
         ]);  
 
     cScale.domain([
-        0,
-        // d3.min(data["fifty_most_common"].map(function(d){return +d["length"];})),
-        d3.max(data["fifty_most_common"].map(function(d){return +d["length"];}))
+        //0,
+        d3.min(data["fifty_most_common"].map(function(d){return +d["frequency"];})),
+        d3.max(data["fifty_most_common"].map(function(d){return +d["frequency"];}))
         ]); 
 
     //append the grid mark axis first, so it's in back

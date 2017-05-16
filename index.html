@@ -7,69 +7,9 @@
   <meta name="keywords" content="keywords,here">
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<style type="text/css">
-  .tooltip{
-    font:0.7em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    opacity: 0;
-    position: absolute;
-    top:0;
-    left:0;
-    -webkit-transform: translate(-50%,0);
-            transform: translate(-50%,0);
-    z-index: 9999;
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px 0px #ccc;
-    padding: 10px;
-    background-color:white;
-    pointer-events:none;
-}
-/* Build the arrow at bottom of tooltip box */
-.tooltip:after{
-    top:100%;
-    left:50%;
-    border:solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border-top-color:black;
-    pointer-events:none;
-    border-width: 10px;
-    margin-left:-10px;
-}
-.tooltip:before{
-    top:100%;
-    left:50%;
-    border:solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    z-index: 99999;
-    border-top-color:white;
-    pointer-events:none;
-    border-width: 9px;
-    margin-left:-9px;
-}
-.x.axis, 
-.y.axis {
-  font:0.7em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
 
-
-img {
-  max-height: 350px;
-}
-
-
-
-
-
-
-</style>
 
 </head>
   <body>
@@ -98,7 +38,15 @@ img {
               </div>
               <h5>Analysis</h5>
               <div>
-                Clinton's linguistic register was pretty wide during this debate, with many of her fifty most frequent tokens above eight characters in length. It's interesting that her most frequent tokens were the verbs <i>would</i> and <i>think</i>, both terms that express some conditionality. Throughout her perfromance in this debate, the themes of <i>communities</i>, <i>information</i>, and <i>business</i> are apparent. 
+              <p>
+                Clinton's linguistic register was pretty wide during this debate, with several of her fifty most frequent tokens above eight characters in length. It's interesting that her most frequent tokens were the verbs <i>would</i> and <i>think</i>, both terms that express some conditionality. 
+              </p>
+              <p>
+                Some linguists might attribute this to conversational <a href="https://en.wikipedia.org/wiki/Hedge_(linguistics)">'hedging'</a>, but it could also be a deliberate tactic employed by Clinton to position herself as the rational, level-headed choice as she attacked Trump's fitness for office. 
+              </p>
+              <p>
+                Throughout the debate, Clinton relies on the themes of <i>communities</i>, <i>information</i>, and <i>business</i> to communicate her message. 
+              </p>  
               </div>
             </div>
 
@@ -107,7 +55,7 @@ img {
           </div>
           <hr>
           <div class="col-lg-12">
-                <h5>Clinton | Fifty Most Frequent Tokens</h5>
+                <h5>Fifty Most Frequent Tokens</h5>
                 <div id="clinton-results"></div>
           </div>
         </div>
@@ -115,22 +63,41 @@ img {
         <div class="row">
             <div class="col-lg-12">
             <h2>Donald J. Trump</h2>
-            <div class="col-lg-3">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4">
             <img class="img img-responsive trump-img" src="./images/trump.png">    
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-9 col-sm-8">
               <div id="trump-total">
+              <h5>Summary</h5>
                 During this debate, Trump spoke a total of <span class="total-tokens"></span> words before the transcript was normalized, <span class="total-unique-tokens"></span> of which were unique. After normalization, Trump's transcript contained 
                 <span class="total-tokens-normal"></span> tokens, 
                 <span class="total-tokens-unique-normal"></span> of which were unique.
                 </div>
+                <h5>Analysis</h5>
+                <div>
+                  <p>
+                  Trump's linguistic register was very centrally clustered compared with Clinton's word choice, with Trump's maximum length token being nine letters. In comparison, Trump also used repetition to a higher degree, with many of his most frequently used words appearing more than thirty times throughout the debate.
+                  </p> 
+                  <p>
+                    Two of the more significant token include <i>secretary</i> and <i>companies</i>, which echo the two main themes of Trump's first debate performance, his business acumen and direct attacks on Secretary Clinton.
+                  </p>
+                  <p>
+                    The relative simplicity of Trump's rhetoric was a staple of his public speech on the campaign trail, appealing to his base of working class white voters. 
+                  </p>
+                </div>
+                <div>
+                  
+                </div>
             </div>
               
             </div>
+            <hr>
             <div class="col-lg-12">
             <h5>Fifty Most Frequent Tokens</h5>
               <div id="trump-results">
               </div>
+            </div>
             </div>
         </div>
     </div>
